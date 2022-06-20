@@ -8,34 +8,54 @@ public class zeroBlade : AttackBlade
     Test PlayerT;
     [SerializeField]
     private GameObject ShildSet;
+    public float coolTime = 8.0f;
+
+    GameObject Shild;
 
     private void Start()
     {
+        coolTime = 0.0f;
         CameraShake = GameObject.Find("Main Camera").GetComponent<CameraShake>();
         PlayerT = GetComponentInParent<Test>();
     }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.E))
+        Debug.Log(coolTime);
+        if (coolTime >= 0.0f)
         {
+            coolTime -= Time.deltaTime;
+        }
+
+        if(GameManager.Instance.SkillIn == true && GameManager.Instance.nowState == GameManager.GameState.EndGame)
+        {
+            coolTime = 0.0f;
+            Destroy(Shild);
+        }
+
+        if (Input.GetKey(KeyCode.E)&& GameManager.Instance.SkillIn == false&&coolTime<=0.0f)
+        {
+            GameManager.Instance.SkillIn = true;
             Skill1();
         }
     }
 
     IEnumerator SetShild()
     {
-        GameObject Shild = Instantiate(ShildSet,GameObject.Find("Player").transform);
+        Shild = Instantiate(ShildSet,GameObject.Find("Player").transform);
         Shild.transform.localScale = new Vector3(0, 0, 0);
         Shild.transform.position = gameObject.transform.position;
         Shild.GetComponent<MeshRenderer>().material.color = new Color(1, 236 / 255f, 0, 0.1f);
 
         Shild.transform.DOScale(new Vector3(3, 3, 3), 1);
 
+        coolTime = 8.0f;
+
         yield return new WaitForSeconds(5f);
         Shild.GetComponent<MeshRenderer>().material.DOFade(0, 0.5f);
         yield return new WaitForSeconds(0.5f);
         Destroy(Shild);
+        GameManager.Instance.SkillIn = false;
     }
 
 

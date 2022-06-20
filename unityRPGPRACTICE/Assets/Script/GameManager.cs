@@ -20,6 +20,8 @@ public class GameManager : MonoSingleton<GameManager>
 {
     ShopCanvasManager shopManager;
 
+    public bool SkillIn = false;
+
     public User userData;
 
     [SerializeField]
@@ -130,6 +132,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void EndState()
     {
+        SkillIn = false;
         nowState = GameState.EndGame;
         userData.nowStage++;
     }
