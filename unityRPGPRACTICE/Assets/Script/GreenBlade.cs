@@ -1,36 +1,71 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class GreenBlade : AttackBlade
 {
     Test PlayerT;
-    Transform PlayerTransform;
+    public Transform PlayerTransform;
     [SerializeField]
     private GameObject SetOb;
+    public float coolTime = 8.0f;
 
     private void Start()
     {
+        coolTime = 0.0f;
         CameraShake = GameObject.Find("Main Camera").GetComponent<CameraShake>();
         PlayerT = GetComponentInParent<Test>();
-        PlayerTransform = GetComponentInParent<Transform>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        Debug.Log(coolTime);
+        if (coolTime >= 0.0f)
+        {
+            coolTime -= Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E)&& coolTime <= 0.0f)
         {
             Skill1();
         }
+        if (GameManager.Instance.SkillIn == true)
+        {
+            StartCoroutine(Delay());
+        }
+
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GameManager.Instance.SkillIn = false;
     }
 
 
     protected override void Skill1()
     {
-        GameObject Desh;
+        GameManager.Instance.SkillIn = true;
+        float Setx = Input.GetAxis("Vertical");
+        float Sety = Input.GetAxis("Horizontal");
+        PlayerTransform.DOMove(new Vector3(PlayerTransform.position.x+(Sety*10), PlayerTransform.position.y, PlayerTransform.position.z+(Setx*10)),0.5f,false);
+        StartCoroutine(Copy());
+        coolTime = 8.0f;
+    }
 
-        Desh = Instantiate(SetOb);
-        PlayerTransform.position = new Vector3(PlayerTransform.position.x, PlayerTransform.position.y, PlayerTransform.position.z + 10);
+
+
+
+    IEnumerator Copy()
+    {
+        while(GameManager.Instance.SkillIn==true){
+            yield return new WaitForFixedUpdate();
+            GameObject Desh;
+
+            Desh = Instantiate(SetOb);
+            Desh.transform.position = PlayerTransform.position;
+        }
 
     }
 

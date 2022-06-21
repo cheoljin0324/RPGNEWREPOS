@@ -9,6 +9,8 @@ public class Test : MonoBehaviour
 
     [SerializeField]
     public ShopCanvasManager Shop;
+    [SerializeField]
+    private SkinnedMeshRenderer skined;
     ItemDataBase itemData;
 
     public int Hp = 3;
@@ -276,11 +278,11 @@ public class Test : MonoBehaviour
         Color Second = Color.white;
         for (int i = 0; i < 5; i++)
         {
-            transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[0].DOColor(First, 0.25f);
-            transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[1].DOColor(First, 0.25f);
+            skined.materials[0].DOColor(First, 0.25f);
+            skined.materials[1].DOColor(First, 0.25f);
             yield return new WaitForSeconds(0.25f);
-            transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[0].DOColor(Second, 0.25f);
-            transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().materials[1].DOColor(Second, 0.25f);
+            skined.materials[0].DOColor(Second, 0.25f);
+            skined.materials[1].DOColor(Second, 0.25f);
             yield return new WaitForSeconds(0.25f);
         }
 
