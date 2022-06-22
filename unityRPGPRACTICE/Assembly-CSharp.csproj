@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\MeleeWeaponTrail\Example\Scripts\MouseMove.cs" />
     <Compile Include="Assets\Script\BlueBlade.cs" />
+    <Compile Include="Assets\Script\OnTrapSetFriend.cs" />
     <Compile Include="Assets\Script\ItemBuySet.cs" />
     <Compile Include="Assets\Script\cameraCtrl.cs" />
     <Compile Include="Assets\MeleeWeaponTrail\Scripts\MeleeWeaponTrail.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Assets\Script\BladeColorSet.cs" />
     <Compile Include="Assets\Script\MonoSigletone.cs" />
     <Compile Include="Assets\Script\SetTrap2.cs" />
+    <Compile Include="Assets\Script\SetTrap4.cs" />
     <Compile Include="Assets\Script\InstantiateObject.cs" />
     <Compile Include="Assets\MeleeWeaponTrail\Example\Scripts\SwooshTest.cs" />
     <Compile Include="Assets\Script\zeroBlade.cs" />
@@ -90,8 +92,7 @@
     <Compile Include="Assets\Script\CylinderTrap1.cs" />
     <Compile Include="Assets\Script\GreenBlade.cs" />
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\FreeCameraLogic.cs" />
-    <Compile Include="Assets\Script\OnTrapSetFriend.cs" />
-    <Compile Include="Assets\Script\SetTrap4.cs" />
+    <Compile Include="Assets\Script\SetTrap5.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Supercyan Character Pack Free Sample\Shaders\Legacy\CelShader.shader" />

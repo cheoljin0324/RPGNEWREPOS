@@ -215,13 +215,9 @@ public class EnemyTest : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("obstacle"))
         {
-            spdMove = 0.0f;
+            transform.position = collision.gameObject.transform.position;
+            Damage(9999999);
         }
-        else
-        {
-            spdMove = 2.0f;
-        }
-    
 }
 
 
