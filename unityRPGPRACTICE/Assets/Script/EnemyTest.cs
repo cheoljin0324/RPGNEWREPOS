@@ -210,4 +210,20 @@ public class EnemyTest : MonoBehaviour
         CeckState();
         Debug.Log(enemyState);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("obstacle"))
+        {
+            spdMove = 0.0f;
+        }
+        else
+        {
+            spdMove = 2.0f;
+        }
+    
+}
+
+
+       
 }

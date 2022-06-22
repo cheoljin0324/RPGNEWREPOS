@@ -73,10 +73,12 @@
     <Compile Include="Assets\Script\AttackBlade.cs" />
     <Compile Include="Assets\Script\BladeColorSet.cs" />
     <Compile Include="Assets\Script\MonoSigletone.cs" />
+    <Compile Include="Assets\Script\SetTrap2.cs" />
     <Compile Include="Assets\Script\InstantiateObject.cs" />
     <Compile Include="Assets\MeleeWeaponTrail\Example\Scripts\SwooshTest.cs" />
     <Compile Include="Assets\Script\zeroBlade.cs" />
     <Compile Include="Assets\Script\OnTrap.cs" />
+    <Compile Include="Assets\Script\SetTrap3.cs" />
     <Compile Include="Assets\Script\SetFalse.cs" />
     <Compile Include="Assets\Script\Test.cs" />
     <Compile Include="Assets\Script\GameStart1.cs" />
@@ -84,10 +86,12 @@
     <Compile Include="Assets\Script\ItemDataBase.cs" />
     <Compile Include="Assets\Script\Shild.cs" />
     <Compile Include="Assets\Script\SetTrap.cs" />
+    <Compile Include="Assets\Script\TrapInstantiate.cs" />
+    <Compile Include="Assets\Script\CylinderTrap1.cs" />
     <Compile Include="Assets\Script\GreenBlade.cs" />
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\FreeCameraLogic.cs" />
-    <Compile Include="Assets\Script\TrapInstantiate.cs" />
-    <Compile Include="Assets\Script\SetTrap2.cs" />
+    <Compile Include="Assets\Script\OnTrapSetFriend.cs" />
+    <Compile Include="Assets\Script\SetTrap4.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Supercyan Character Pack Free Sample\Shaders\Legacy\CelShader.shader" />
