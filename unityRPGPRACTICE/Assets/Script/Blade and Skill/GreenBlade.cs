@@ -73,8 +73,11 @@ public class GreenBlade : AttackBlade
     {
         if (other.CompareTag("Enemy"))
         {
-            CameraShake.CameraShaking();
-            other.gameObject.SendMessage("Damage", PlayerT.attack);
+            if (PlayerT.isAttack == true)
+            {
+                CameraShake.CameraShaking();
+                other.gameObject.SendMessage("Damage", PlayerT.attack);
+            }
         }
     }
 }

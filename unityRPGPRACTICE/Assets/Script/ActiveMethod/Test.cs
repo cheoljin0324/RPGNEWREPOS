@@ -17,6 +17,7 @@ public class Test : MonoBehaviour
     public bool nowDamaging = false;
     public int attack = 30;
     public string name = "player";
+    public bool isAttack = false;
 
     
     private Vector3 vecNowVelocity = Vector3.zero;
@@ -147,11 +148,13 @@ public class Test : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 playerState = PlayerState.Attack;
+                isAttack = true;
                 Getanim.SetBool("isAttack", true);
             }
             else if (Input.GetMouseButtonUp(0))
             {
                 playerState = PlayerState.Idle;
+                isAttack = false;
                 Getanim.SetBool("isAttack", false);
             }
         }
