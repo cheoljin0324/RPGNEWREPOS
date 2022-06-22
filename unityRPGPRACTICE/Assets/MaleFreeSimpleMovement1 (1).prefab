@@ -230,7 +230,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4666917694995311552}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.2
   m_Height: 1
@@ -302,7 +302,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Shop: {fileID: 0}
+  skined: {fileID: 0}
   Hp: 3
+  nowDamaging: 0
   attack: 30
   name: player
   walkMoveSpd: 2
@@ -1510,6 +1512,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9af144ec3a1e6c43a5c540cca7cbc27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerTransform: {fileID: 0}
+  SetOb: {fileID: 0}
+  coolTime: 8
 --- !u!1001 &1081693743492614403
 PrefabInstance:
   m_ObjectHideFlags: 0

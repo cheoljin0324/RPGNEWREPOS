@@ -203,7 +203,7 @@ MonoBehaviour:
   targetTransform: {fileID: 0}
   posTarget: {x: 0, y: 0, z: 0}
   hp: 100
-  atkRange: 1.5
+  atkRange: 5
 --- !u!1 &6685457516842303773
 GameObject:
   m_ObjectHideFlags: 0
