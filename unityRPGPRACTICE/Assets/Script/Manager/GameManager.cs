@@ -133,6 +133,8 @@ public class GameManager : MonoSingleton<GameManager>
     {
         SkillIn = false;
         nowState = GameState.EndGame;
+        shopManager = GameObject.Find("ShopManager").GetComponent<ShopCanvasManager>();
+        shopManager.SetShop();
         userData.nowStage++;
     }
 

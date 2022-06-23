@@ -15,6 +15,7 @@ public class ItemDataBase : MonoBehaviour
 public struct ItemSet
 {
     public Sprite ItemForm;
+    public Sprite ItemCharImage;
     public string ItemName;
     public int ItemID;
     public bool isBuy;

@@ -11,9 +11,17 @@ public class SetTrap4 : MonoBehaviour
     private Transform[] trapPos;
     string tagIn = "obstacle";
 
+    private Transform beforeTransform;
+
     void ShotTrap()
     {
+        beforeTransform = trapWall[0].transform;
         StartCoroutine(InTrap1());
+    }
+
+    public void offDoor()
+    {
+        trapWall[0].transform.DOMove(beforeTransform.localPosition, 0.5f, false);
     }
 
     IEnumerator InTrap1()

@@ -80,14 +80,10 @@ public class EnemyTest : MonoBehaviour
         hp -= damage;
         if (hp < 0)
         {
-            InstOb.SendMessage("SetRemoveList", gameObject);
-            gameManager.SetRemoveEnemy(gameObject);
             Destroy(gameObject);
+            GameObject.Find("EnemyManager").GetComponent<EnemyManager>().DelEnemy();
             GameManager.Instance.userData.coin += SetCoin;
-            if (GameManager.Instance.EnemyObList.Count == 0)
-            {
-                GameManager.Instance.EndState();
-            }
+            GameManager.Instance.EndState();
         }
         GameObject TextImpact = Instantiate(DamageText,Canvas.transform);
         TextImpact.GetComponent<Text>().text = "-" + damage.ToString();

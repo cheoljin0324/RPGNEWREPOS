@@ -83,6 +83,7 @@
     <Compile Include="Assets\Script\Blade and Skill\zeroBlade.cs" />
     <Compile Include="Assets\Script\Trap\OnTrap.cs" />
     <Compile Include="Assets\Script\Trap\SetTrap3.cs" />
+    <Compile Include="Assets\Script\BossFieldSet.cs" />
     <Compile Include="Assets\Script\SetFalse.cs" />
     <Compile Include="Assets\Script\ActiveMethod\Test.cs" />
     <Compile Include="Assets\Script\ActiveMethod\GameStart1.cs" />
@@ -95,7 +96,9 @@
     <Compile Include="Assets\Script\Trap\CylinderTrap1.cs" />
     <Compile Include="Assets\Script\Blade and Skill\GreenBlade.cs" />
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\FreeCameraLogic.cs" />
-    <Compile Include="Assets\Script\BossFieldSet.cs" />
+    <Compile Include="Assets\Script\Manager\DungeonsManager.cs" />
+    <Compile Include="Assets\Script\Manager\EnemyInstance.cs" />
+    <Compile Include="Assets\Script\Manager\EnemyManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\uchwch\Toon\Shader\Toon_DoubleShadeWithFeather_Mobile_TransClipping_StencilMask.shader" />

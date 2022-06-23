@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class InstantiateObject : MonoBehaviour
 {
-    public GameObject Enemy;
+    public GameObject[] Enemy;
+    [SerializeField]
+    Transform[] EnemyPos;
+    [SerializeField]
+    bool[] EnemySet;
     [SerializeField]
     GameObject SetChar;
     public bool EndElement = false;
 
     
     public List<GameObject> EnemyList;
-
-    private void Start()
-    {
-        EnemyInst();
-    }
 
     private void Update()
     {
@@ -31,20 +30,18 @@ public class InstantiateObject : MonoBehaviour
     public void EnemyInst()
     {
         GameManager.Instance.SetMobAmount();
-       for (int i = 0; i<GameManager.Instance.MobAmount; i++)
-        {
-            GameObject EnemyOb = Instantiate(Enemy);
-            EnemyOb.transform.position = transform.position;
-            EnemyList.Add(EnemyOb);
+        int SetEnemy = Random.RandomRange(0, Enemy.Length);
+        GameObject EnemyOb = Instantiate(Enemy[SetEnemy]);
+        EnemyOb.transform.position = transform.position;
+        EnemyList.Add(EnemyOb);
 
-            EnemyOb.GetComponent<EnemyTest>().targetCharacter = SetChar;
-            EnemyOb.GetComponent<EnemyTest>().targetTransform = SetChar.transform;
-            EnemyOb.GetComponent<EnemyTest>().InstOb = gameObject;
-            EnemyOb.GetComponent<EnemyTest>().ID = EnemyList.Count;
-            EnemyOb.transform.position = new Vector3(Random.RandomRange(transform.position.x - 10, transform.position.x + 10), transform.position.y, Random.RandomRange(transform.position.z - 10, transform.position.z + 10));
+        EnemyOb.GetComponent<EnemyTest>().targetCharacter = SetChar;
+        EnemyOb.GetComponent<EnemyTest>().targetTransform = SetChar.transform;
+        EnemyOb.GetComponent<EnemyTest>().InstOb = gameObject;
+        EnemyOb.GetComponent<EnemyTest>().ID = EnemyList.Count;
+        EnemyOb.transform.position = new Vector3(Random.RandomRange(transform.position.x - 10, transform.position.x + 10), transform.position.y, Random.RandomRange(transform.position.z - 10, transform.position.z + 10));
 
-            GameManager.Instance.EnemyObList.Add(EnemyOb);
-        }
+        GameManager.Instance.EnemyObList.Add(EnemyOb);
         EndElement = true;
     }
 
