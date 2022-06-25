@@ -28,7 +28,7 @@ public class SetTrap4 : MonoBehaviour
     {
         for(int i = 0; i<trapWall.Length; i++)
         {
-            trapWall[i].transform.DOMove(trapPos[i].position, 0.5f,false);
+            trapWall[i].transform.DOMove(trapPos[i].position, 0.3f,false);
             yield return new WaitForSeconds(0.5f);
         }
 

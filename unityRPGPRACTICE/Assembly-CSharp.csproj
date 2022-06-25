@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\MeleeWeaponTrail\Example\Scripts\MouseMove.cs" />
     <Compile Include="Assets\Script\Blade and Skill\BlueBlade.cs" />
+    <Compile Include="Assets\Script\Manager\EnemyManager.cs" />
     <Compile Include="Assets\Script\Trap\OnTrapSetFriend.cs" />
     <Compile Include="Assets\Script\Item\ItemBuySet.cs" />
     <Compile Include="Assets\Script\MiniMapSet.cs" />
@@ -89,16 +90,15 @@
     <Compile Include="Assets\Script\ActiveMethod\GameStart1.cs" />
     <Compile Include="Assets\Script\Manager\GameManager.cs" />
     <Compile Include="Assets\Script\MniMapCamera.cs" />
+    <Compile Include="Assets\Script\Manager\EnemyInstance.cs" />
     <Compile Include="Assets\Script\Item\ItemDataBase.cs" />
     <Compile Include="Assets\Script\Blade and Skill\Shild.cs" />
     <Compile Include="Assets\Script\Trap\SetTrap.cs" />
     <Compile Include="Assets\Script\Trap\TrapInstantiate.cs" />
+    <Compile Include="Assets\Script\Manager\DungeonsManager.cs" />
     <Compile Include="Assets\Script\Trap\CylinderTrap1.cs" />
     <Compile Include="Assets\Script\Blade and Skill\GreenBlade.cs" />
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\FreeCameraLogic.cs" />
-    <Compile Include="Assets\Script\Manager\DungeonsManager.cs" />
-    <Compile Include="Assets\Script\Manager\EnemyInstance.cs" />
-    <Compile Include="Assets\Script\Manager\EnemyManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\uchwch\Toon\Shader\Toon_DoubleShadeWithFeather_Mobile_TransClipping_StencilMask.shader" />
@@ -118,6 +118,7 @@
     <None Include="Assets\uchwch\Toon\Shader\Tess\UCTS_Outline_Tess.cginc" />
     <None Include="Assets\uchwch\Toon\Shader\Toon_ShadingGradeMap_AngelRing_TransClipping_StencilOut.shader" />
     <None Include="Assets\uchwch\Toon\Shader\Toon_OutlineObject.shader" />
+    <None Include="Assets\SD Unity-Chan Haon Custom\Shader\Unity-chan Toon Shader Ver 2.0.6\Toon_DoubleShadeWithFeather_Clipping_OnlyColor.shader" />
     <None Include="Assets\uchwch\Toon\Shader\Tess\UCTS_ShadowCaster_Tess.cginc" />
     <None Include="Assets\uchwch\Toon\Shader\Toon_ShadingGradeMap_StencilOut.shader" />
     <None Include="Assets\uchwch\Toon\Shader\Toon_ShadingGradeMap_AngelRing_TransClipping.shader" />
@@ -154,6 +155,7 @@
     <None Include="Assets\uchwch\Toon\Shader\ToonColor_DoubleShadeWithFeather_Transparent.shader" />
     <None Include="Assets\uchwch\Toon\Shader\Tess\ToonColor_DoubleShadeWithFeather_Tess_StencilMask.shader" />
     <None Include="Assets\uchwch\Toon\Shader\Tess\ToonColor_DoubleShadeWithFeather_TransClipping_Tess_StencilOut.shader" />
+    <None Include="Assets\SD Unity-Chan Haon Custom\Shader\Unity-chan Toon Shader Ver 2.0.6\ToonColor_DoubleShadeWithFeather_Clipping_OnlyColor.shader" />
     <None Include="Assets\uchwch\Toon\Shader\ToonColor_DoubleShadeWithFeather_Clipping_StencilOut.shader" />
     <None Include="Assets\uchwch\Toon\Shader\Tess\Toon_DoubleShadeWithFeather_Tess_StencilMask.shader" />
     <None Include="Assets\uchwch\Toon\Shader\Tess\Toon_ShadingGradeMap_TransClipping_Tess_StencilOut.shader" />
@@ -220,6 +222,7 @@
     <None Include="Assets\uchwch\Toon\Shader\Toon_DoubleShadeWithFeather_Mobile_StencilMask.shader" />
     <None Include="Assets\uchwch\Toon\Shader\Tess\Toon_ShadingGradeMap_TransClipping_Tess.shader" />
     <None Include="Assets\uchwch\Toon\Shader\Tess\Toon_DoubleShadeWithFeather_Tess.shader" />
+    <None Include="Assets\SD Unity-Chan Haon Custom\Shader\Unity-chan Toon Shader Ver 2.0.6\UCTS_Outline2.cginc" />
     <None Include="Assets\uchwch\Toon\Shader\Tess\Toon_DoubleShadeWithFeather_TransClipping_Tess.shader" />
     <None Include="Assets\uchwch\Toon\Shader\ToonColor_ShadingGradeMap.shader" />
     <None Include="Assets\uchwch\Toon\Shader\Tess\ToonColor_ShadingGradeMap_TransClipping_Tess_StencilMask.shader" />

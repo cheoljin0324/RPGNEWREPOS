@@ -11,6 +11,8 @@ public class ShopCanvasManager : MonoSingleton<ShopCanvasManager>
     [SerializeField]
     private GameObject minimap;
     [SerializeField]
+    private Image CharImage;
+    [SerializeField]
     GameObject ScrollIn;
     [SerializeField]
     ItemDataBase ItemData;
@@ -25,6 +27,7 @@ public class ShopCanvasManager : MonoSingleton<ShopCanvasManager>
 
     public bool isShop = false;
     public bool isFirst = true;
+    public int nowImage;
 
     Transform back;
 
@@ -46,6 +49,20 @@ public class ShopCanvasManager : MonoSingleton<ShopCanvasManager>
             }
         }
         back = transform;
+    }
+
+    public void SetOn(int ItemID)
+    {
+        if (nowImage != ItemID)
+        {
+            CharImage.gameObject.SetActive(true);
+            CharImage.sprite = ItemData.setItem[ItemID].ItemCharImage;
+        }
+        else
+        {
+            CharImage.gameObject.SetActive(false);
+        }
+
     }
 
     public void SetShop()
@@ -93,6 +110,11 @@ public class ShopCanvasManager : MonoSingleton<ShopCanvasManager>
                 ItemData.setItem[i].isUse = true;
                 ItemMemeber[temp].GetComponentsInChildren<Button>()[1].image.color = Color.blue;
             }
+        }
+
+        for(int i = 0; i<gameObjectPrefabArr.Length; i++)
+        {
+            ItemMemeber[i].GetComponent<Button>().onClick.AddListener(() => SetOn(i));
         }
     }
 

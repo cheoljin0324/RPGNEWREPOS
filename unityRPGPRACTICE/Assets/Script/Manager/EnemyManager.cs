@@ -23,11 +23,17 @@ public class EnemyManager : MonoBehaviour
     {
         nowPointer = dungeonsNumber;
         int set = Random.RandomRange(0, Mob.Length);
+        StartCoroutine(SetInstanObject(set, dungeonsNumber));
+        theDungeon = DungeonState.Game;
+    }
+
+    IEnumerator SetInstanObject(int set, int dungeonsNumber)
+    {
+        yield return new WaitForSeconds(1.2f);
         nowObject = Instantiate(Mob[set]);
         nowObject.GetComponent<EnemyTest>().targetCharacter = CharOb;
         nowObject.GetComponent<EnemyTest>().targetTransform = CharOb.transform;
         nowObject.transform.position = new Vector3(setTransform[dungeonsNumber].transform.position.x, setTransform[dungeonsNumber].transform.position.y, setTransform[dungeonsNumber].transform.position.z - 2f);
-        theDungeon = DungeonState.Game;
     }
 
     public void DelEnemy()

@@ -124,7 +124,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     void GameSetting()
     {
-        Player = GameObject.Find("Player");
+        Player = GameObject.Find("Player_Unity");
         Player.transform.position = Setting[usingMap].position;
         NowGamingState();
     }

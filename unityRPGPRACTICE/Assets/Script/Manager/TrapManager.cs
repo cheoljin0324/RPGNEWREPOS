@@ -35,7 +35,7 @@ public class TrapManager : MonoBehaviour
             PosInIt[PosNumber] = true;
             if (setNumber == 0)
             {
-                SetTrap.transform.position = new Vector3(SetTrap.transform.position.x, SetTrap.transform.position.z);
+                SetTrap.transform.position = new Vector3(SetTrap.transform.position.x, 0.0f,SetTrap.transform.position.z);
             }
         }
     }

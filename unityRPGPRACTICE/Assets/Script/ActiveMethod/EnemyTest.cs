@@ -45,7 +45,7 @@ public class EnemyTest : MonoBehaviour
     //해골 체력
     public int hp = 100;
     //해골 공격 거리 및 탐지 거리
-    public float atkRange = 0f;
+    public float atkRange = 100f;
 
     void Start()
     {

@@ -10,7 +10,7 @@ public class Test : MonoBehaviour
     [SerializeField]
     public ShopCanvasManager Shop;
     [SerializeField]
-    private SkinnedMeshRenderer skined;
+    private SkinnedMeshRenderer[] skined;
     ItemDataBase itemData;
 
     public int Hp = 3;
@@ -18,6 +18,8 @@ public class Test : MonoBehaviour
     public int attack = 30;
     public string name = "player";
     public bool isAttack = false;
+
+    public int attackStack = 1;
 
     
     private Vector3 vecNowVelocity = Vector3.zero;
@@ -145,19 +147,49 @@ public class Test : MonoBehaviour
                 isQMove = false;
             }
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0)&&attackStack==1&&isAttack==false)
             {
                 playerState = PlayerState.Attack;
-                isAttack = true;
-                Getanim.SetBool("isAttack", true);
+
+                Getanim.SetBool("FAttack", true);
+                Debug.Log("FAttack");
+                StartCoroutine(AttackSet());
+                attackStack = 2;
             }
-            else if (Input.GetMouseButtonUp(0))
+            else if(Input.GetMouseButtonDown(0) && attackStack == 2&&isAttack == false)
             {
-                playerState = PlayerState.Idle;
-                isAttack = false;
-                Getanim.SetBool("isAttack", false);
+                playerState = PlayerState.Attack;
+
+                Getanim.SetBool("SAttack", true);
+                Debug.Log("SAttack");
+                StartCoroutine(AttackSet());
+                attackStack = 3;
             }
+            else if (Input.GetMouseButtonDown(0) && attackStack == 3&&isAttack == false)
+            {
+                playerState = PlayerState.Attack;
+
+
+                Getanim.SetBool("TAttack", true);
+                Debug.Log("TAttack");
+                StartCoroutine(AttackSet());
+                attackStack = 1;
+            }
+
+
+
         }
+    }
+
+    IEnumerator AttackSet()
+    {
+        isAttack = true;
+        yield return new WaitForSeconds(0.5f);
+        isAttack = false;
+        playerState = PlayerState.Idle;
+        Getanim.SetBool("FAttack", false);
+        Getanim.SetBool("SAttack", false);
+        Getanim.SetBool("TAttack", false);
     }
 
     void Move()
@@ -287,11 +319,15 @@ public class Test : MonoBehaviour
         Color Second = Color.white;
         for (int i = 0; i < 5; i++)
         {
-            skined.materials[0].DOColor(First, 0.25f);
-            skined.materials[1].DOColor(First, 0.25f);
+            for(int j = 0; i<skined.Length; i++)
+            {
+                skined[i].materials[0].DOColor(First, 0.25f);
+            }
             yield return new WaitForSeconds(0.25f);
-            skined.materials[0].DOColor(Second, 0.25f);
-            skined.materials[1].DOColor(Second, 0.25f);
+            for (int j = 0; i < skined.Length; i++)
+            {
+                skined[i].materials[0].DOColor(Second, 0.25f);
+            }
             yield return new WaitForSeconds(0.25f);
         }
         nowDamaging = false;

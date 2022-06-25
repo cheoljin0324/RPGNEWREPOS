@@ -19,13 +19,17 @@ public class OnTrap : MonoBehaviour
     {
         if (setTrap == false)
         {
-            Debug.Log("This is my Trap");
-            gameObject.transform.parent.SendMessage("ShotTrap");
-            if (dungeonManager.theDungeon != EnemyManager.DungeonState.Game)
+            if (other.CompareTag("Player"))
             {
-                GameObject.Find("EnemyManager").GetComponent<EnemyManager>().InstantObject(poinNumber);
+                Debug.Log("This is my Trap");
+                gameObject.transform.parent.SendMessage("ShotTrap");
+                if (dungeonManager.theDungeon != EnemyManager.DungeonState.Game)
+                {
+                    GameObject.Find("EnemyManager").GetComponent<EnemyManager>().InstantObject(poinNumber);
+                }
+                setTrap = true;
             }
-            setTrap = true;
+          
         }
         
 
